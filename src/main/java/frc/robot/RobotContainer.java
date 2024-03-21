@@ -55,9 +55,12 @@ public class RobotContainer
    */
   public RobotContainer()
   {
-    NamedCommands.registerCommand("shootAMP", new RunCommand(() -> {
+    NamedCommands.registerCommand("shootAMP", new InstantCommand(() -> {
       m_ShooterSubsystem.shootAMP();
-      
+    }));
+
+    NamedCommands.registerCommand("stopShooter", new InstantCommand(() -> {
+      m_ShooterSubsystem.stopShooter();
     }));
 
     SendableChooser<Command> autoChooser = AutoBuilder.buildAutoChooser();
