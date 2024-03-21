@@ -1,0 +1,37 @@
+{
+  "version": 1.0,
+  "startingPose": {
+    "position": {
+      "x": 0.6619978954243629,
+      "y": 7.109837076817011
+    },
+    "rotation": 0
+  },
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Go To AMP"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Exit Amp"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Rotate Forward"
+          }
+        }
+      ]
+    }
+  },
+  "folder": null,
+  "choreoAuto": false
+}
