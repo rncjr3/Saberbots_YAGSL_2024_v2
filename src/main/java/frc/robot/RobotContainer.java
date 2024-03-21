@@ -63,6 +63,12 @@ public class RobotContainer
       m_ShooterSubsystem.stopShooter();
     }));
 
+    NamedCommands.registerCommand("shootSpeaker", new InstantCommand(() -> {
+      m_ShooterSubsystem.shootSpeaker();
+    }));
+
+    
+
     SendableChooser<Command> autoChooser = AutoBuilder.buildAutoChooser();
     SmartDashboard.putData("Auto Chooser", autoChooser);
 

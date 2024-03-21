@@ -41,7 +41,7 @@ public class Pigeon2Swerve extends SwerveIMU
   public Pigeon2Swerve(int canid, String canbus)
   {
     imu = new Pigeon2(canid, canbus);
-    SmartDashboard.putData(imu);
+    //SmartDashboard.putData(imu);
   }
 
   /**

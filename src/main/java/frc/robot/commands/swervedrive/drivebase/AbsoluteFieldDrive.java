@@ -70,12 +70,12 @@ public class AbsoluteFieldDrive extends Command
     translation = SwerveMath.limitVelocity(translation, swerve.getFieldVelocity(), swerve.getPose(),
                                            Constants.LOOP_TIME, Constants.ROBOT_MASS, List.of(Constants.CHASSIS),
                                            swerve.getSwerveDriveConfiguration());
-    SmartDashboard.putNumber("LimitedTranslation", translation.getX());
-    SmartDashboard.putString("Translation", translation.toString());
+    //SmartDashboard.putNumber("LimitedTranslation", translation.getX());
+    //SmartDashboard.putString("Translation", translation.toString());
 
     // Make the robot move
     swerve.drive(translation, desiredSpeeds.omegaRadiansPerSecond, true);
-
+    //System.out.print("absolutefied");
   }
 
   // Called once the command ends or is interrupted.

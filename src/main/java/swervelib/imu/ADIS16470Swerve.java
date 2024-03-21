@@ -34,7 +34,7 @@ public class ADIS16470Swerve extends SwerveIMU
     imu = new ADIS16470_IMU();
     offset = new Rotation3d();
     factoryDefault();
-    SmartDashboard.putData(imu);
+    //SmartDashboard.putData(imu);
   }
 
   /**

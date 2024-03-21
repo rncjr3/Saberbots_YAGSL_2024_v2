@@ -48,7 +48,7 @@ public class NavXSwerve extends SwerveIMU
       /* See http://navx-mxp.kauailabs.com/guidance/selecting-an-interface/ for details. */
       gyro = new AHRS(port);
       factoryDefault();
-      SmartDashboard.putData(gyro);
+      //SmartDashboard.putData(gyro);
     } catch (RuntimeException ex)
     {
       navXError.setText("Error instantiating NavX: " + ex.getMessage());
@@ -70,7 +70,7 @@ public class NavXSwerve extends SwerveIMU
       /* See http://navx-mxp.kauailabs.com/guidance/selecting-an-interface/ for details. */
       gyro = new AHRS(port);
       factoryDefault();
-      SmartDashboard.putData(gyro);
+      //SmartDashboard.putData(gyro);
     } catch (RuntimeException ex)
     {
       navXError.setText("Error instantiating NavX: " + ex.getMessage());
@@ -92,7 +92,7 @@ public class NavXSwerve extends SwerveIMU
       /* See http://navx-mxp.kauailabs.com/guidance/selecting-an-interface/ for details. */
       gyro = new AHRS(port);
       factoryDefault();
-      SmartDashboard.putData(gyro);
+      //SmartDashboard.putData(gyro);
     } catch (RuntimeException ex)
     {
       navXError.setText("Error instantiating NavX: " + ex.getMessage());

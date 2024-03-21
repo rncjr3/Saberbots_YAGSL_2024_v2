@@ -35,7 +35,7 @@ public class PigeonSwerve extends SwerveIMU
   {
     imu = new WPI_PigeonIMU(canid);
     offset = new Rotation3d();
-    SmartDashboard.putData(imu);
+    //SmartDashboard.putData(imu);
   }
 
   /**

@@ -90,7 +90,7 @@ public class Alert
     if (!groups.containsKey(group))
     {
       groups.put(group, new SendableAlerts());
-      SmartDashboard.putData(group, groups.get(group));
+      //SmartDashboard.putData(group, groups.get(group));
     }
 
     this.text = text;

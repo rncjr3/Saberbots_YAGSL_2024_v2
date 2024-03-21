@@ -182,7 +182,8 @@ public class SwerveSubsystem extends SubsystemBase {
 	 */
 	public Command driveCommand(DoubleSupplier translationX, DoubleSupplier translationY, DoubleSupplier headingX,
 			DoubleSupplier headingY) {
-		// swerveDrive.setHeadingCorrection(true); // Normally you would want heading
+			swerveDrive.setHeadingCorrection(true); // Normally you would want heading
+			System.out.println("drive");
 		// correction for this kind of control.
 		return run(() -> {
 			double xInput = Math.pow(translationX.getAsDouble(), 3); // Smooth controll out

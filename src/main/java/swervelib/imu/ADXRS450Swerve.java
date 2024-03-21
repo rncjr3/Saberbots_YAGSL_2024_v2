@@ -32,7 +32,7 @@ public class ADXRS450Swerve extends SwerveIMU
   {
     imu = new ADXRS450_Gyro();
     factoryDefault();
-    SmartDashboard.putData(imu);
+    //SmartDashboard.putData(imu);
   }
 
   /**

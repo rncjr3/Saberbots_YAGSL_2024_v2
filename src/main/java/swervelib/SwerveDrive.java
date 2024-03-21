@@ -187,7 +187,7 @@ public class SwerveDrive
     // Initialize Telemetry
     if (SwerveDriveTelemetry.verbosity.ordinal() >= TelemetryVerbosity.POSE.ordinal())
     {
-      SmartDashboard.putData("Field", field);
+      //SmartDashboard.putData("Field", field);
     }
 
     if (SwerveDriveTelemetry.verbosity.ordinal() >= TelemetryVerbosity.INFO.ordinal())
@@ -487,7 +487,7 @@ public class SwerveDrive
     // Display commanded speed for testing
     if (SwerveDriveTelemetry.verbosity == TelemetryVerbosity.INFO)
     {
-      SmartDashboard.putString("RobotVelocity", velocity.toString());
+      //SmartDashboard.putString("RobotVelocity", velocity.toString());
     }
     if (SwerveDriveTelemetry.verbosity.ordinal() >= TelemetryVerbosity.LOW.ordinal())
     {
@@ -964,8 +964,8 @@ public class SwerveDrive
         if (SwerveDriveTelemetry.verbosity == TelemetryVerbosity.HIGH)
         {
           module.updateTelemetry();
-          SmartDashboard.putNumber("Raw IMU Yaw", getYaw().getDegrees());
-          SmartDashboard.putNumber("Adjusted IMU Yaw", getOdometryHeading().getDegrees());
+          //SmartDashboard.putNumber("Raw IMU Yaw", getYaw().getDegrees());
+          //SmartDashboard.putNumber("Adjusted IMU Yaw", getOdometryHeading().getDegrees());
         }
         if (SwerveDriveTelemetry.verbosity.ordinal() >= TelemetryVerbosity.INFO.ordinal())
         {
@@ -985,7 +985,7 @@ public class SwerveDrive
 
       if (SwerveDriveTelemetry.verbosity.ordinal() >= TelemetryVerbosity.INFO.ordinal())
       {
-        SwerveDriveTelemetry.updateData();
+        //SwerveDriveTelemetry.updateData();
       }
     } catch (Exception e)
     {

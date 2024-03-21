@@ -39,7 +39,7 @@ public class AnalogGyroSwerve extends SwerveIMU
     }
     gyro = new AnalogGyro(channel);
     factoryDefault();
-    SmartDashboard.putData(gyro);
+    //SmartDashboard.putData(gyro);
   }
 
   /**

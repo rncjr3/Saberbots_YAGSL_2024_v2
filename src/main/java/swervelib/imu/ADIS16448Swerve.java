@@ -32,7 +32,7 @@ public class ADIS16448Swerve extends SwerveIMU
   {
     imu = new ADIS16448_IMU();
     factoryDefault();
-    SmartDashboard.putData(imu);
+    //SmartDashboard.putData(imu);
   }
 
   /**
