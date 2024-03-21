@@ -47,6 +47,8 @@ public class RobotContainer
   private final RevBlinking ledRevBlinking = new RevBlinking();
   private final AutoBalanceCommand auto = new AutoBalanceCommand(drivebase);
 
+  
+
   // Replace with CommandPS4Controller or CommandJoystick if needed
   final CommandXboxController driverXbox = new CommandXboxController(0);
 
@@ -106,7 +108,8 @@ public class RobotContainer
     Command driveFieldOrientedAnglularVelocity = drivebase.driveCommand(
         () -> -MathUtil.applyDeadband(driverXbox.getLeftY(), OperatorConstants.LEFT_Y_DEADBAND),
         () -> -MathUtil.applyDeadband(driverXbox.getLeftX(), OperatorConstants.LEFT_X_DEADBAND),
-        () -> driverXbox.getRightX() * 0.5);
+        () -> -MathUtil.applyDeadband(driverXbox.getRightX(), 0.4));
+        //() -> driverXbox.getRightX() * 0.8);
 
     Command driveFieldOrientedDirectAngleSim = drivebase.simDriveCommand(
         () -> MathUtil.applyDeadband(driverXbox.getLeftY(), OperatorConstants.LEFT_Y_DEADBAND),
@@ -154,8 +157,11 @@ public class RobotContainer
    */
   public Command getAutonomousCommand()
   {
+
+
+
     // An example command will be run in autonomous
-    return new PathPlannerAuto("Score Amp");
+    return new PathPlannerAuto("Right Speaker");
   }
 
   public void setDriveMode()
