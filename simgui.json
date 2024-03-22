@@ -116,7 +116,9 @@
       "/LiveWindow/Ungrouped/Pigeon 2 [13]": "Gyro",
       "/LiveWindow/Ungrouped/Scheduler": "Scheduler",
       "/SmartDashboard/Auto Chooser": "String Chooser",
+      "/SmartDashboard/Auto choices": "String Chooser",
       "/SmartDashboard/Field": "Field2d",
+      "/SmartDashboard/Get Out of the Way": "String Chooser",
       "/SmartDashboard/Pigeon 2 (v6) [13]": "Gyro",
       "/SmartDashboard/Pigeon 2 (v6) [9]": "Gyro",
       "/SmartDashboard/Pigeon 2 [13]": "Gyro",
@@ -163,6 +165,15 @@
     }
   },
   "NetworkTables Info": {
+    "Clients": {
+      "open": true
+    },
+    "Connections": {
+      "open": true
+    },
+    "Server": {
+      "open": true
+    },
     "visible": true
   }
 }

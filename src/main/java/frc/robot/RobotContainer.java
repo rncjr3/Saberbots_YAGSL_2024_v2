@@ -45,13 +45,12 @@ public class RobotContainer
   private final HangerSubsystem hang = new HangerSubsystem();
   private final ShooterSubsystem m_ShooterSubsystem = new ShooterSubsystem();
   private RevBlinking ledRevBlinking = new RevBlinking();
-  // private final AutoBalanceCommand auto = new AutoBalanceCommand(drivebase);
 
   // Replace with CommandPS4Controller or CommandJoystick if needed
   final CommandXboxController driverXbox = new CommandXboxController(0);
-  SendableChooser<Command> autoChooser = AutoBuilder.buildAutoChooser();
-
-  private String m_autoSelected = "Get Out of the Way";
+  
+  private SendableChooser<Command> autoChooser = AutoBuilder.buildAutoChooser("Score Amp");
+  private Command m_autoSelected;
 
   /**
    * The container for the robot. Contains subsystems, OI devices, and commands.
@@ -71,7 +70,6 @@ public class RobotContainer
     }));
 
     SmartDashboard.putData("Auto choices", autoChooser);
-
     // Configure the trigger bindings
     configureBindings();
     
@@ -154,20 +152,9 @@ public class RobotContainer
    * @return the command to run in autonomous
    */
   public Command getAutonomousCommand() {
-    
-    m_autoSelected = autoChooser.getSelected().getName();
-    System.out.println(m_autoSelected);
+    m_autoSelected = autoChooser.getSelected();
 
-    switch(m_autoSelected) {
-      case "Left Speaker":
-        return new PathPlannerAuto("Left Speaker");
-      case "Score Amp": 
-        return new PathPlannerAuto("Score Amp");
-      case "Middle Speaker": 
-        return new PathPlannerAuto("Middle Speaker");
-      default: 
-        return new PathPlannerAuto("Get Out of the Way");
-    }
+    return m_autoSelected;
   }
 
   public void setDriveMode()
