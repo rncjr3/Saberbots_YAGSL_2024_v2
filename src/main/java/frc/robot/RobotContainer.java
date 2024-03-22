@@ -65,6 +65,7 @@ public class RobotContainer
     }));
 
     NamedCommands.registerCommand("shootSpeaker", new InstantCommand(() -> {
+      System.out.println("Shoot speaker");
       m_ShooterSubsystem.shootSpeaker();
     }));
 
@@ -152,8 +153,8 @@ public class RobotContainer
    */
   public Command getAutonomousCommand() {
     m_autoSelected = autoChooser.getSelected();
-
-    return m_autoSelected;
+    System.out.println("Name of the auto selected " + m_autoSelected.getName());
+    return new PathPlannerAuto(m_autoSelected.getName());
   }
 
   public void setDriveMode()
