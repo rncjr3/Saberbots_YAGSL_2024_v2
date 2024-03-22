@@ -45,13 +45,13 @@ public class RobotContainer
   private final HangerSubsystem hang = new HangerSubsystem();
   private final ShooterSubsystem m_ShooterSubsystem = new ShooterSubsystem();
   private RevBlinking ledRevBlinking = new RevBlinking();
-  private final AutoBalanceCommand auto = new AutoBalanceCommand(drivebase);
+  // private final AutoBalanceCommand auto = new AutoBalanceCommand(drivebase);
 
   // Replace with CommandPS4Controller or CommandJoystick if needed
   final CommandXboxController driverXbox = new CommandXboxController(0);
+  SendableChooser<Command> autoChooser = AutoBuilder.buildAutoChooser();
 
-  private String m_autoSelected;
-  private final SendableChooser<String> m_autoChooser = new SendableChooser<>();
+  private String m_autoSelected = "Get Out of the Way";
 
   /**
    * The container for the robot. Contains subsystems, OI devices, and commands.
@@ -70,10 +70,7 @@ public class RobotContainer
       m_ShooterSubsystem.shootSpeaker();
     }));
 
-    
-
-    SendableChooser<Command> autoChooser = AutoBuilder.buildAutoChooser();
-    SmartDashboard.putData("Auto Chooser", autoChooser);
+    SmartDashboard.putData("Auto choices", autoChooser);
 
     // Configure the trigger bindings
     configureBindings();
@@ -158,8 +155,8 @@ public class RobotContainer
    */
   public Command getAutonomousCommand() {
     
-    // An example command will be run in autonomous
-    m_autoSelected = m_autoChooser.getSelected();
+    m_autoSelected = autoChooser.getSelected().getName();
+    System.out.println(m_autoSelected);
 
     switch(m_autoSelected) {
       case "Left Speaker":
