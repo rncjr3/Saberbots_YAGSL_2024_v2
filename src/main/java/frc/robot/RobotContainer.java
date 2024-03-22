@@ -48,7 +48,7 @@ public class RobotContainer
   // Replace with CommandPS4Controller or CommandJoystick if needed
   final CommandXboxController driverXbox = new CommandXboxController(0);
 
-  private SendableChooser<Command> autoChooser = AutoBuilder.buildAutoChooser("Score Amp");
+  private SendableChooser<Command> autoChooser = AutoBuilder.buildAutoChooser();
   private Command m_autoSelected;
 
   /**
@@ -65,7 +65,7 @@ public class RobotContainer
     }));
 
     NamedCommands.registerCommand("shootSpeaker", new InstantCommand(() -> {
-      System.out.println("Shoot speaker");
+      //System.out.println("Shoot speaker");
       m_ShooterSubsystem.shootSpeaker();
     }));
 
@@ -103,9 +103,9 @@ public class RobotContainer
     // left stick controls translation
     // right stick controls the angular velocity of the robot
     Command driveFieldOrientedAnglularVelocity = drivebase.driveCommand(
-        () -> -MathUtil.applyDeadband(driverXbox.getLeftY(), OperatorConstants.LEFT_Y_DEADBAND),
-        () -> -MathUtil.applyDeadband(driverXbox.getLeftX(), OperatorConstants.LEFT_X_DEADBAND),
-        () -> -MathUtil.applyDeadband(driverXbox.getRightX(), 0.4));
+        () -> -MathUtil.applyDeadband(driverXbox.getLeftY(), OperatorConstants.LEFT_Y_DEADBAND) *0.8,
+        () -> -MathUtil.applyDeadband(driverXbox.getLeftX(), OperatorConstants.LEFT_X_DEADBAND) *0.8,
+        () -> -MathUtil.applyDeadband(driverXbox.getRightX(), 0.4)*0.8);
         //() -> driverXbox.getRightX() * 0.8);
 
     Command driveFieldOrientedDirectAngleSim = drivebase.simDriveCommand(
@@ -152,9 +152,10 @@ public class RobotContainer
    * @return the command to run in autonomous
    */
   public Command getAutonomousCommand() {
-    m_autoSelected = autoChooser.getSelected();
-    System.out.println("Name of the auto selected " + m_autoSelected.getName());
-    return new PathPlannerAuto(m_autoSelected.getName());
+    //m_autoSelected = autoChooser.getSelected();
+    //System.out.println("Name of the auto selected " + m_autoSelected.getName());
+    //return new PathPlannerAuto("Left Speaker");
+    return new PathPlannerAuto("Get Out of the Way");
   }
 
   public void setDriveMode()
