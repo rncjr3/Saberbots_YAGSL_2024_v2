@@ -107,11 +107,6 @@
         }
       }
     },
-    "PWM Outputs": {
-      "window": {
-        "visible": true
-      }
-    },
     "RoboRIO": {
       "RoboRIO Input": {
         "open": true
@@ -128,6 +123,7 @@
       "/LiveWindow/Ungrouped/PIDController[1]": "PIDController",
       "/LiveWindow/Ungrouped/Pigeon 2 [13]": "Gyro",
       "/LiveWindow/Ungrouped/Scheduler": "Scheduler",
+      "/SmartDashboard/Auto Choices": "String Chooser",
       "/SmartDashboard/Auto Chooser": "String Chooser",
       "/SmartDashboard/Auto choices": "String Chooser",
       "/SmartDashboard/Field": "Field2d",
