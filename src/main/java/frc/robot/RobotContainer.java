@@ -48,8 +48,8 @@ public class RobotContainer
   // Replace with CommandPS4Controller or CommandJoystick if needed
   final CommandXboxController driverXbox = new CommandXboxController(0);
 
-  private SendableChooser<Command> autoChooser = AutoBuilder.buildAutoChooser("Get Out of the Way");
-  private Command m_autoSelected;
+  private SendableChooser<Command> autoChooser = AutoBuilder.buildAutoChooser("Score Amp");
+  private String m_autoSelected;
 
   /**
    * The container for the robot. Contains subsystems, OI devices, and commands.
@@ -151,9 +151,9 @@ public class RobotContainer
    * @return the command to run in autonomous
    */
   public Command getAutonomousCommand() {
-    m_autoSelected = autoChooser.getSelected();
+    m_autoSelected = autoChooser.getSelected().getName();
 
-    return m_autoSelected;
+    return new PathPlannerAuto(m_autoSelected);
   }
 
   public void setDriveMode()
