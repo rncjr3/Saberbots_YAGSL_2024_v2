@@ -106,6 +106,19 @@
           "open": true
         }
       }
+    },
+    "PWM Outputs": {
+      "window": {
+        "visible": true
+      }
+    },
+    "RoboRIO": {
+      "RoboRIO Input": {
+        "open": true
+      },
+      "window": {
+        "visible": true
+      }
     }
   },
   "NTProvider": {
@@ -166,9 +179,6 @@
   },
   "NetworkTables Info": {
     "Clients": {
-      "open": true
-    },
-    "Connections": {
       "open": true
     },
     "Server": {
