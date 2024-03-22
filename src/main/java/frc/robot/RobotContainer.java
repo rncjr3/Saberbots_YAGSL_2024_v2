@@ -140,8 +140,8 @@ public class RobotContainer
 
     // Light keybind
     driverXbox.x().onTrue(new InstantCommand(() -> {
-      System.out.println("Lights set to blue");
-      this.ledRevBlinking.setLightsToBlue();
+      System.out.println("Lights changed");
+      this.ledRevBlinking.toggleLedLights();
     }));
   }
 
@@ -185,6 +185,21 @@ public class RobotContainer
     }
 
     /**
+     * Toggles different LED lights in-game
+     */
+    public void toggleLedLights() {
+      double currentValue = this.ledLight.get();
+
+      if(currentValue != .93) {
+        setLightsToBlue();
+      } else if(currentValue == .87) {
+        setLightsToRed();
+      } else {
+        setDefaultLights();
+      }
+    }
+
+    /**
      * Sets the led lights to default (white).
      */
     public void setDefaultLights() {
@@ -196,6 +211,13 @@ public class RobotContainer
      */
     public void setLightsToBlue() {
       this.ledLight.set(.87);
+    }
+
+    /**
+     * Sets the led lighs to blue.
+     */
+    public void setLightsToRed() {
+      this.ledLight.set(.61);
     }
   }
 }
