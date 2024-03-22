@@ -48,7 +48,7 @@ public class RobotContainer
   // Replace with CommandPS4Controller or CommandJoystick if needed
   final CommandXboxController driverXbox = new CommandXboxController(0);
 
-  private SendableChooser<Command> autoChooser = AutoBuilder.buildAutoChooser("Score Amp");
+  private SendableChooser<Command> autoChooser = AutoBuilder.buildAutoChooser();
   private String m_autoSelected;
 
   /**
