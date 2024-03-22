@@ -5,7 +5,7 @@ import com.revrobotics.CANSparkLowLevel.MotorType;
 import edu.wpi.first.wpilibj.Timer;
 
 
-public class ShooterSubsystem extends SubsystemBase{
+public class ShooterSubsystem extends SubsystemBase {
     private CANSparkMax TopShooterMotor = new CANSparkMax(15,MotorType.kBrushless);
     private CANSparkMax BottomShooterMotor = new CANSparkMax(14,MotorType.kBrushless);
     Timer timer = new Timer();
@@ -54,12 +54,14 @@ public class ShooterSubsystem extends SubsystemBase{
 
     public void shootAMP(){
         System.out.println("Shooting amp");
+        System.out.println(TopShooterMotor.get());
         timer.reset();
         timer.start();
         while(timer.get()<2){
             TopShooterMotor.set(0.15);
             BottomShooterMotor.set(-0.15);
         }
+        System.out.println(TopShooterMotor.get());
         TopShooterMotor.set(0);
         BottomShooterMotor.set(0);
     }
