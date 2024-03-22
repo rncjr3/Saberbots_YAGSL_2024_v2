@@ -40,15 +40,14 @@ public class RobotContainer
 {
 
   // The robot's subsystems and commands are defined here...
-  private final SwerveSubsystem drivebase = new SwerveSubsystem(new File(Filesystem.getDeployDirectory(),
-                                                                         "swerve/neo"));
+  private final SwerveSubsystem drivebase = new SwerveSubsystem(new File(Filesystem.getDeployDirectory(), "swerve/neo"));
   private final HangerSubsystem hang = new HangerSubsystem();
   private final ShooterSubsystem m_ShooterSubsystem = new ShooterSubsystem();
   private RevBlinking ledRevBlinking = new RevBlinking();
 
   // Replace with CommandPS4Controller or CommandJoystick if needed
   final CommandXboxController driverXbox = new CommandXboxController(0);
-  
+
   private SendableChooser<Command> autoChooser = AutoBuilder.buildAutoChooser("Score Amp");
   private Command m_autoSelected;
 
@@ -70,6 +69,7 @@ public class RobotContainer
     }));
 
     SmartDashboard.putData("Auto choices", autoChooser);
+
     // Configure the trigger bindings
     configureBindings();
     
@@ -124,7 +124,6 @@ public class RobotContainer
    */
   private void configureBindings()
   {
-
     // Gyro keybind
     driverXbox.a().onTrue((Commands.runOnce(drivebase::zeroGyro)));
 
@@ -196,7 +195,7 @@ public class RobotContainer
      * Sets the led lights to blue.
      */
     public void setLightsToBlue() {
-      this.ledLight.set(87);
+      this.ledLight.set(.87);
     }
   }
 }
