@@ -44,13 +44,14 @@ public class RobotContainer
                                                                          "swerve/neo"));
   private final HangerSubsystem hang = new HangerSubsystem();
   private final ShooterSubsystem m_ShooterSubsystem = new ShooterSubsystem();
-  private final RevBlinking ledRevBlinking = new RevBlinking();
+  private RevBlinking ledRevBlinking = new RevBlinking();
   private final AutoBalanceCommand auto = new AutoBalanceCommand(drivebase);
-
-  
 
   // Replace with CommandPS4Controller or CommandJoystick if needed
   final CommandXboxController driverXbox = new CommandXboxController(0);
+
+  private String m_autoSelected;
+  private final SendableChooser<String> m_autoChooser = new SendableChooser<>();
 
   /**
    * The container for the robot. Contains subsystems, OI devices, and commands.
@@ -155,13 +156,21 @@ public class RobotContainer
    *
    * @return the command to run in autonomous
    */
-  public Command getAutonomousCommand()
-  {
-
-
-
+  public Command getAutonomousCommand() {
+    
     // An example command will be run in autonomous
-    return new PathPlannerAuto("Right Speaker");
+    m_autoSelected = m_autoChooser.getSelected();
+
+    switch(m_autoSelected) {
+      case "Left Speaker":
+        return new PathPlannerAuto("Left Speaker");
+      case "Score Amp": 
+        return new PathPlannerAuto("Score Amp");
+      case "Middle Speaker": 
+        return new PathPlannerAuto("Middle Speaker");
+      default: 
+        return new PathPlannerAuto("Get Out of the Way");
+    }
   }
 
   public void setDriveMode()
@@ -182,7 +191,7 @@ public class RobotContainer
     /**
      * Creates a Spark object for the rev blinking led strip.
      */
-    private final Spark ledLight = new Spark(0);
+    private Spark ledLight = new Spark(0);
 
     /** 
      * Constructor for this RevBlinking.     * Sets the lights to default color (white)
